@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Focus Editor | Open Source Content Optimizer</title>
+    <meta name="description" content="A distraction-free, open-source SEO and content optimization editor with real-time readability, keyword density, E-E-A-T scoring, and bring-your-own-key AI assistance.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #ffffff;
+            color: #18181b;
+        }
+        
+        /* Custom scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.05); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.3); }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.15); border-radius: 10px; }
+
+        /* Editor Typography & Layout */
+        .editor-content { 
+            outline: none; 
+            padding: 24px 48px 300px 48px; 
+            min-height: 100%; 
+            color: #18181b; 
+            line-height: 1.85; 
+            position: relative; 
+            background: white; 
+            font-size: 18px;
+            letter-spacing: -0.01em;
+            max-width: 100%;
+            margin: 0;
+            caret-color: #3b82f6;
+        }
+        
+        .editor-content::selection {
+            background: #dbeafe;
+            color: inherit;
+        }
+
+        .editor-content p { margin-bottom: 24px; position: relative; }
+        
+        .editor-content h1 { 
+            font-size: 3rem; 
+            font-weight: 900; 
+            color: #09090b; 
+            margin-bottom: 2.5rem; 
+            margin-top: 2rem; 
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+        
+        .editor-content h2 { 
+            font-size: 2rem; 
+            font-weight: 800; 
+            color: #09090b; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -0.025em;
+        }
+        
+        .editor-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #09090b;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .editor-content blockquote { 
+            border-left: 4px solid #3b82f6; 
+            padding-left: 1.5rem; 
+            font-style: italic; 
+            color: #64748b; 
+            margin: 3.5rem 0; 
+            background: #f8fafc; 
+            padding: 1.5rem 2rem; 
+            border-radius: 0 1rem 1rem 0; 
+            font-size: 1.1em;
+        }
+        
+        .editor-content a {
+            color: #3b82f6;
+            text-decoration: underline;
+            text-decoration-color: rgba(59, 130, 246, 0.4);
+            transition: color 0.2s ease;
+        }
+        .editor-content a:hover {
+            color: #2563eb;
+            text-decoration-color: rgba(37, 99, 235, 0.6);
+        }
+
+        .para-warning { border-right: 4px solid #ef4444; background: rgba(239, 68, 68, 0.02); }
+        .para-warning::after { 
+            content: "TOO LONG"; 
+            position: absolute; 
+            right: 8px; 
+            top: 4px; 
+            font-size: 9px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            letter-spacing: 0.05em; 
+            opacity: 0.4; 
+            pointer-events: none;
+        }
+
+        [contenteditable]:empty:before { 
+            content: "Start writing your SEO masterpiece..."; 
+            color: #94a3b8; 
+            font-style: italic; 
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
