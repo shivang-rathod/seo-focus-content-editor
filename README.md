@@ -40,9 +40,9 @@ A distraction-free, local-first, open-source SEO and content optimization editor
   - Scan content for AI-generated patterns.
 - **Local-Only Key Storage**: API keys are stored solely in your browser's `localStorage` and sent directly to your chosen provider—never uploaded to any server.
 
-### 💾 Local-First Storage & Export
-- **Local Documents Drawer**: Create, switch, rename, delete, and import `.json` document backups stored in `localStorage`.
-- **Multi-Format Export**: Download your work as **Markdown (`.md`)**, **HTML (`.html`)**, **JSON Backup (`.json`)**, or copy Markdown directly to the clipboard.
+### 💾 Local-First Storage, Import & Export
+- **Local Documents Drawer**: Create, switch, rename, and delete drafts stored directly in `localStorage`.
+- **Multi-Format Import & Export**: Import and export seamlessly across **Markdown (`.md`)**, **HTML (`.html`)**, **Plain Text (`.txt`)**, and **JSON Backup (`.json`)**, or copy Markdown directly to your clipboard.
 
 ---
 
@@ -65,8 +65,8 @@ A distraction-free, local-first, open-source SEO and content optimization editor
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd seo-focus-editor
+   git clone https://github.com/shivang-rathod/seo-focus-content-editor.git
+   cd seo-focus-content-editor
    ```
 
 2. **Install dependencies**
@@ -93,15 +93,22 @@ A distraction-free, local-first, open-source SEO and content optimization editor
 ## 📁 Project Structure
 
 ```text
-├── ai/                  # AI prompt orchestration (rewrites, metadata, FAQs, detection)
-├── components/
-│   ├── editor/          # ContentEditable rich text editor & formatting toolbar
-│   └── layout/          # Documents drawer & Insights/Keywords/SEO/AI/Optimize sidebar tabs
-├── core/                # Client-side SEO, readability, E-E-A-T, keyword & sentence analyzers
-├── pages/               # Direct EditorPage entry view
-├── services/            # Local BYOK AI config, gateway & provider adapters (Gemini, OpenAI, Custom)
-├── types/               # TypeScript definitions for documents, editor metrics & AI config
-└── utils/               # LocalStorage document persistence manager
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── src/
+    ├── main.tsx             # Application entry point
+    ├── App.tsx              # Root component
+    ├── ai/                  # AI prompt orchestration (rewrites, metadata, FAQs, detection)
+    ├── components/
+    │   ├── editor/          # ContentEditable rich text editor & formatting toolbar
+    │   └── layout/          # Local documents drawer & Insights/Keywords/SEO/AI/Optimize sidebar
+    ├── core/                # Client-side SEO, readability, E-E-A-T, keyword & sentence analyzers
+    ├── pages/               # Direct EditorPage workspace
+    ├── services/            # Local BYOK AI config, gateway & provider adapters
+    ├── types/               # TypeScript definitions for documents, editor metrics & AI config
+    └── utils/               # LocalStorage document manager & multi-format import/export helpers
 ```
 
 ---
